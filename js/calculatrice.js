@@ -31,6 +31,7 @@ window.addEventListener(
         value1.setAttribute("class", "invalid");
         message.innerHTML = "Erreur, entrez seulemt des chiffres";
         message.style.backgroundColor = "red";
+        resultConteneur.setAttribute("value", "");
       }
     });
     value2.addEventListener("blur", function () {
@@ -38,6 +39,7 @@ window.addEventListener(
         value2.setAttribute("class", "invalid");
         message.innerHTML = "Erreur, entrez seulemt des chiffres";
         message.style.backgroundColor = "red";
+        resultConteneur.setAttribute("value", "");
       }
     });
 
