@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Exercice - calculatrice</title>
-    <link rel="stylesheet" href="css/calculatrice.css">
+    <link rel="stylesheet" href="css/calculatrice.css" />
     <script src="js/calculatrice.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <button id="openButton">Calculatrice</button>
 
     <div id="calculator">
-        <h2>Calculatrice</h2>
+      <h2>Calculatrice</h2>
+      <div>
         <div>
-            <input type="text" size="6" id="value1" />
-            <span class="plus-sign"> + </span>
-            <input type="text" size="6" id="value2" />
-
-            <button id="equalButton"> = </button>
-
-            <input type="text" size="10" id="result" />
-
-            <p id="message"> </p>
-
-            <button id="closeButton">Fermer</button>
+          <label for="multiplier"
+            >Multiplication <input type="checkbox" id="multiplier" />
+          </label>
+          <label for="diviser">
+            Division<input type="checkbox" id="diviser" />
+          </label>
+          <label for="soustraire">
+            Soustraction<input type="checkbox" id="soustraire" />
+          </label>
+          <label for="additionner"
+            >Addition<input type="checkbox" id="additionner" checked
+          /></label>
         </div>
-    </div>
-</body>
+        <input type="text" size="6" id="value1" />
+        <span class="plus-sign" id="signe"> + </span>
+        <input type="text" size="6" id="value2" />
 
+        <button id="equalButton">=</button>
+
+        <input type="text" size="10" id="result" />
+
+        <p id="message"></p>
+
+        <button id="closeButton">Fermer</button>
+      </div>
+    </div>
+  </body>
 </html>

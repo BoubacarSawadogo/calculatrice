@@ -40,6 +40,39 @@ window.addEventListener(
         message.style.backgroundColor = "red";
       }
     });
+
+    const multiplier = document.getElementById("multiplier");
+    const soustraire = document.getElementById("soustraire");
+    const diviser = document.getElementById("diviser");
+    const additionner = document.getElementById("additionner");
+    const signe = documment.getElementById("signe");
+
+    // Choix de la methode de calcul (division, multiplier, addition, soustraction)
+    console.log(additionner.checked);
+    multiplier.addEventListener("click", function () {
+      diviser.checked = false;
+      additionner.checked = false;
+      soustraire.checked = false;
+    });
+    soustraire.addEventListener("click", function () {
+      diviser.checked = false;
+      additionner.checked = false;
+      multiplier.checked = false;
+    });
+
+    diviser.addEventListener("click", function () {
+      soustraire.checked = false;
+      additionner.checked = false;
+      multiplier.checked = false;
+    });
+
+    additionner.addEventListener("click", function () {
+      diviser.checked = false;
+      soustraire.checked = false;
+      multiplier.checked = false;
+    });
+
+    // methode pour actionner le calcul
     equalButton.addEventListener("click", function () {
       let resultat = parseInt(value1.value) + parseInt(value2.value);
       if (isNaN(resultat)) {
@@ -49,6 +82,7 @@ window.addEventListener(
         message.innerHTML = "";
       }
     });
+    // fin
 
     closeButton.addEventListener("click", function (event) {
       calculator.style.display = "none";
