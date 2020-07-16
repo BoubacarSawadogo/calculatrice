@@ -45,36 +45,50 @@ window.addEventListener(
     const soustraire = document.getElementById("soustraire");
     const diviser = document.getElementById("diviser");
     const additionner = document.getElementById("additionner");
-    const signe = documment.getElementById("signe");
-
+    const signe = document.getElementById("signe");
+    console.log(signe.innerHTML);
     // Choix de la methode de calcul (division, multiplier, addition, soustraction)
     console.log(additionner.checked);
     multiplier.addEventListener("click", function () {
       diviser.checked = false;
       additionner.checked = false;
       soustraire.checked = false;
+      signe.innerHTML = "*";
     });
     soustraire.addEventListener("click", function () {
       diviser.checked = false;
       additionner.checked = false;
       multiplier.checked = false;
+      signe.innerHTML = "-";
     });
 
     diviser.addEventListener("click", function () {
       soustraire.checked = false;
       additionner.checked = false;
       multiplier.checked = false;
+      signe.innerHTML = "/";
     });
 
     additionner.addEventListener("click", function () {
       diviser.checked = false;
       soustraire.checked = false;
       multiplier.checked = false;
+      signe.innerHTML = "+";
     });
 
     // methode pour actionner le calcul
     equalButton.addEventListener("click", function () {
-      let resultat = parseInt(value1.value) + parseInt(value2.value);
+      let resultat;
+      if (diviser.checked) {
+        resultat = parseInt(value1.value) / parseInt(value2.value);
+      } else if (soustraire.checked) {
+        resultat = parseInt(value1.value) - parseInt(value2.value);
+      } else if (multiplier.checked) {
+        resultat = parseInt(value1.value) * parseInt(value2.value);
+      } else if (additionner.checked) {
+        resultat = parseInt(value1.value) + parseInt(value2.value);
+      }
+
       if (isNaN(resultat)) {
       } else {
         resultConteneur.setAttribute("value", resultat);
